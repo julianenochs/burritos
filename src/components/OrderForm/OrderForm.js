@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Orders from '../Orders/Orders';
-import { setOrders } from '../../actions';
+import { addNewOrder } from '../../actions';
 import { connect } from 'react-redux';
 class OrderForm extends Component {
   constructor() {
@@ -66,7 +66,7 @@ class OrderForm extends Component {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  setNewOrder: (order) => dispatch(setOrders(order))
-})
+  setNewOrder: (order) => dispatch(addNewOrder(order))
+});
 
 export default connect(null, mapDispatchToProps)(OrderForm);
