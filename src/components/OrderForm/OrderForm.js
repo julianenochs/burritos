@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import Orders from '../Orders/Orders';
 import { addNewOrder } from '../../actions';
 import { connect } from 'react-redux';
-class OrderForm extends Component {
+import { addOrders } from '../../apiCalls';
+
+export class OrderForm extends Component {
   constructor() {
     super();
-    // this.props = props;
     this.state = {
       name: '',
-      ingredients: []
+      ingredients: [],
+      id: Date.now()
     };
   }
 
@@ -25,9 +26,11 @@ class OrderForm extends Component {
     e.preventDefault();
     if (this.state.ingredients.length > 0) {
       this.props.setNewOrder(this.state)
-      // this.clearInputs()
+      addOrders(this.state)
+      this.clearInputs()
     } 
   }
+
 
   clearInputs = () => {
     this.setState({name: '', ingredients: []});
@@ -57,7 +60,7 @@ class OrderForm extends Component {
 
         <p>Order: { this.state.ingredients.join(', ') || 'Nothing selected' }</p>
 
-        <button onClick={e => this.handleSubmit(e)}>
+        <button className='submit-button'onClick={e => this.handleSubmit(e)}>
           Submit Order
         </button>
       </form>

@@ -20,18 +20,18 @@ export class Orders extends Component {
   render() {
     const orderEls = this.props.orders.map(order => {
       return (
-        <div className="order">
+        <div key={Date.now()} className="order">
         <h3>{order.name}</h3>
-        <ul className="ingredient-list">
+        <ul key={Date.now()}className="ingredient-list">
           {order.ingredients.map(ingredient => {
-            return <li>{ingredient}</li>
+            return <li key={Date.now()} >{ingredient}</li>
           })}
         </ul>
       </div>
     )
   });
     return (
-      <section>
+      <section key={Date.now()}>
         { orderEls.length ? orderEls : <p>No orders yet!</p> }
       </section>
     )

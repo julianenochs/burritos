@@ -13,7 +13,7 @@ class App extends Component {
       <main className="App">
         <h1>Burrito Builder</h1>
 
-        <Orders burritos={this.props.burritos}/>
+        <Orders key={ Date.now() }burritos={this.props.burritos}/>
       </main>
     );
   }
