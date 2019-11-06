@@ -11,7 +11,7 @@ class OrderForm extends Component {
     this.state = {
       name: '',
       ingredients: [],
-      id: 0
+      id: Date.now()
     };
   }
 
@@ -26,25 +26,13 @@ class OrderForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.setState({id: Date.now()})
     if (this.state.ingredients.length > 0) {
       this.props.setNewOrder(this.state)
-      this.addNewOrder(this.state)
+      addOrders(this.state)
       this.clearInputs()
     } 
   }
 
-  addNewOrder = order => {
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(order),
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    }
-    addOrders(options)
-  }
 
   clearInputs = () => {
     this.setState({name: '', ingredients: []});
