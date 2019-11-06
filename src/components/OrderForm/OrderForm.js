@@ -8,7 +8,8 @@ class OrderForm extends Component {
     // this.props = props;
     this.state = {
       name: '',
-      ingredients: []
+      ingredients: [],
+      id: 0
     };
   }
 
@@ -23,9 +24,10 @@ class OrderForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    this.setState({id: Date.now()})
     if (this.state.ingredients.length > 0) {
       this.props.setNewOrder(this.state)
-      // this.clearInputs()
+      this.clearInputs()
     } 
   }
 

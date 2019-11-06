@@ -22,9 +22,9 @@ export class Orders extends Component {
       return (
         <div className="order">
         <h3>{order.name}</h3>
-        <ul className="ingredient-list">
+        <ul key={Date.now()}className="ingredient-list">
           {order.ingredients.map(ingredient => {
-            return <li>{ingredient}</li>
+            return <li key={Date.now()} >{ingredient}</li>
           })}
         </ul>
       </div>

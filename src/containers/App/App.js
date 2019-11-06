@@ -11,7 +11,7 @@ export const App = () => {
           <OrderForm />
         </header>
         
-        <Orders />
+        <Orders key={ Date.now() }/>
       </main>
     );
   }
