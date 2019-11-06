@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import Orders from '../Orders/Orders';
 import { addNewOrder } from '../../actions';
 import { connect } from 'react-redux';
 import { addOrders } from '../../apiCalls';
 
-class OrderForm extends Component {
+export class OrderForm extends Component {
   constructor() {
     super();
-    // this.props = props;
     this.state = {
       name: '',
       ingredients: [],
@@ -62,7 +60,7 @@ class OrderForm extends Component {
 
         <p>Order: { this.state.ingredients.join(', ') || 'Nothing selected' }</p>
 
-        <button onClick={e => this.handleSubmit(e)}>
+        <button className='submit-button'onClick={e => this.handleSubmit(e)}>
           Submit Order
         </button>
       </form>

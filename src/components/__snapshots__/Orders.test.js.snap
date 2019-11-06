@@ -2,21 +2,21 @@
 
 exports[`Orders should match the snapshot 1`] = `
 <section
-  key="1573063142208"
+  key="1573065363312"
 >
   <div
     className="order"
-    key="1573063142208"
+    key="1573065363311"
   >
     <h3>
       Juju
     </h3>
     <ul
       className="ingredient-list"
-      key="1573063142208"
+      key="1573065363312"
     >
       <li
-        key="1573063142208"
+        key="1573065363312"
       >
         QUESOOoOoOo
       </li>
